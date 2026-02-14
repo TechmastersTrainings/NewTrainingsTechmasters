@@ -1,0 +1,309 @@
+/* ------------------------------------------------------------------ */
+/* NOTE: Ensure 'Montserrat' is imported in your project setup (e.g., via 
+   Google Fonts link in index.html or an @import rule here):
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+/* ------------------------------------------------------------------ */
+
+/* --- Global & Theme Setup --- */
+:root {
+    --color-primary: #5c6bc0; /* Deep Lavender/Indigo for accents */
+    --color-secondary: #42a5f5; /* Bright Blue for secondary accents */
+    --color-background-page: #f5f5f5; 
+    --color-background-section: #f9f9f9; 
+    --color-background-card: #ffffff; 
+    --color-text-dark: #333333; 
+    --color-text-highlight: #1f223f; 
+    --color-text-light: #ffffff; 
+    --color-card-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    
+    /* 🚀 FONT FAMILY: MONTSERRAT */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Base Styles */
+.homepage-container {
+    background-color: var(--color-background-page); 
+    color: var(--color-text-dark);
+    min-height: 100vh;
+    padding-top: 0;
+    font-size: 1.1rem; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; 
+}
+
+/* Animations (Kept the same) */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.slide-up {
+    animation: slideUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Utility & Text --- */
+.section-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.section-header h2 {
+    /* Font Size Increased (3.2rem) */
+    font-size: 3.2rem; 
+    color: var(--color-text-highlight);
+    margin-bottom: 10px;
+    font-weight: 700; 
+}
+
+.section-header p {
+    /* Font Size Increased (1.3rem) */
+    font-size: 1.3rem; 
+    color: var(--color-text-dark);
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- HERO SECTION: DARK COLOR BACKGROUND --- */
+/* ------------------------------------------------------------------ */
+.hero-section {
+    background: linear-gradient(135deg, #1f223f 0%, #17a2b8 100%); 
+    padding: 100px 50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: 4.5rem; 
+    font-weight: 900; 
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--color-text-light); 
+}
+
+.hero-title .highlight {
+    color: var(--color-secondary); 
+}
+
+.hero-tagline {
+    font-size: 1.6rem; 
+    color: rgba(255, 255, 255, 0.9); 
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- BENTO GRID FEATURES: Section Background Layer & Increased Card Fonts --- */
+/* ------------------------------------------------------------------ */
+
+.features-container {
+    padding: 0 40px 80px;
+    background-color: var(--color-background-section); 
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bento-card {
+    background-color: var(--color-background-card); 
+    color: var(--color-text-dark);
+    border-radius: var(--border-radius);
+    padding: 30px; 
+    box-shadow: 0 8px 15px var(--color-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0; 
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    cursor: default;
+}
+
+/* Sizing for Bento Grid (Kept the same) */
+.bento-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.bento-card.medium {
+    grid-column: span 2;
+}
+
+/* Large Card Specific Style (Primary Color Accent) */
+.bento-card.blue-gradient {
+    /* 🚀 COLOR SYNC FIX: Deeper, more saturated gradient for better contrast */
+    background: linear-gradient(135deg, #3f51b5 0%, var(--color-primary) 100%);
+    color: var(--color-text-light); 
+}
+
+/* ICON & TITLE ALIGNMENT */
+.card-icon {
+    font-size: 1.5rem; 
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; 
+    margin-bottom: 0;
+}
+
+.bento-card h3 {
+    /* Font Size Increased (2rem) */
+    font-size: 2rem; 
+    color: var(--color-text-highlight);
+    margin-bottom: 10px;
+    font-weight: 600; 
+    display: inline; 
+}
+.bento-card.blue-gradient h3 {
+    color: #ffffff; 
+    display: inline;
+}
+
+/* Styling for non-list feature cards */
+.bento-card p {
+    /* Font Size Increased (1.25rem) */
+    display: block;
+    font-size: 1.25rem; 
+    opacity: 0.8;
+    margin-top: 10px; 
+}
+
+/* 🚀 STYLING FOR BULLET POINTS IN LARGE CARD */
+.record-list {
+    list-style-type: disc; 
+    margin: 10px 0 0 20px; 
+    padding: 0;
+    font-size: 1.15rem; 
+    line-height: 1.6;
+}
+.bento-card.blue-gradient .record-list {
+    color: #e0e0e0; /* Off-white for readability on gradient */
+}
+.record-list li {
+    margin-bottom: 8px;
+}
+/* Hide the standard <p> styles for the large card that now uses a list */
+.bento-card.large p {
+    display: none; 
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- CAMPUS HIGHLIGHTS: Section Background Layer --- */
+/* ------------------------------------------------------------------ */
+.campus-highlights-container {
+    padding: 40px 40px 100px;
+    background-color: var(--color-background-section); 
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    background-color: var(--color-background-card); 
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--color-card-shadow);
+    transition: background-color 0.3s ease;
+}
+
+.highlight-card:hover {
+    background-color: #f0f0f0;
+}
+
+.highlight-card h3 {
+    font-size: 1.6rem; 
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.link-text {
+    display: block;
+    margin-top: 15px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+    color: var(--color-secondary);
+}
+
+
+/* --- FOOTER (Font Size Increased) --- */
+.homepage-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #e0e0e0; 
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem; 
+    color: var(--color-text-dark);
+    opacity: 0.8;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .bento-card.large {
+        grid-column: span 3;
+    }
+    .bento-card.medium {
+        grid-column: span 3;
+    }
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 20px 100px;
+    }
+    .hero-title {
+        font-size: 3.5rem; 
+    }
+    .hero-tagline {
+        font-size: 1.3rem;
+    }
+    .bento-grid, .highlights-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    .bento-card.large, .bento-card.medium {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+}

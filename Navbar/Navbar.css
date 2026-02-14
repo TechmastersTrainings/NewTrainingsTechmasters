@@ -1,0 +1,204 @@
+/* Navbar.css - Professional Fixed Header with Dropdown Menus */
+
+/* --- Variables (Matching previous design) --- */
+:root {
+  --primary-color: #6A5ACD; /* Purple/Violet */
+  --secondary-color: #C961E6; /* Pink/Violet */
+  --text-color-dark: #333333;
+  --text-color-light: #ffffff;
+  --bg-dark: #343a40; /* Dark background for fixed header */
+  --dropdown-bg: #ffffff;
+  --hover-light: #f4f4f4;
+}
+
+/* --- Base Navbar Structure --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Dark background for a professional, distinct header */
+  background-color: var(--bg-dark); 
+  color: var(--text-color-light);
+  padding: 15px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color-light);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.navbar-brand .logo:hover {
+  color: var(--secondary-color);
+}
+
+/* --- Main Navigation Links Area --- */
+.nav-links-main {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Spacing between main items */
+}
+
+.nav-links-main > a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 0;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-links-main > a:hover {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Dropdown Container Styling --- */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-title {
+  color: var(--text-color-light);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.nav-link-title:hover {
+  color: var(--secondary-color);
+}
+
+/* --- Dropdown Menu (Hidden by default) --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position right below the title */
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  min-width: 180px;
+  background-color: var(--dropdown-bg);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  
+  /* Initial state: hidden and slightly scaled down */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+}
+
+/* --- Dropdown Menu Visibility on Hover --- */
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  color: var(--text-color-dark);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--hover-light);
+  color: var(--primary-color);
+}
+
+
+/* --- Auth / User Area --- */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-welcome {
+  font-size: 0.95rem;
+  color: var(--text-color-light);
+  font-weight: 500;
+}
+
+.user-role-display {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* --- Button Styling (Matching Gradient style) --- */
+.logout-btn,
+.login-btn,
+.register-btn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.logout-btn {
+  background-color: #dc3545; /* Danger/Alert color */
+  color: var(--text-color-light);
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.login-btn {
+  color: var(--text-color-light);
+  background-color: var(--primary-color);
+}
+
+.login-btn:hover {
+  background-color: #5544b8;
+}
+
+.register-btn {
+  color: var(--text-color-light);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, #AA44EE 100%);
+  box-shadow: 0 4px 8px rgba(201, 97, 230, 0.3);
+}
+
+.register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(201, 97, 230, 0.5);
+}
+
+/* --- Mobile / Responsive Design (Hide complex menu on small screens) --- */
+@media (max-width: 1200px) {
+    .nav-links-main {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links-main {
+        /* Hide complex menu on mobile/tablet */
+        display: none; 
+    }
+    .navbar-brand {
+        flex-grow: 1;
+    }
+}

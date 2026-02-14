@@ -1,0 +1,337 @@
+/* ==================================== */
+/* 1. Global Page Structure & Headers   */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.timetable-container,
+.timetable-form-container,
+.timetable-view-container {
+  padding: 3rem 2rem;
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.timetable-container h1,
+.timetable-form-container h2,
+.timetable-view-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-bottom: 4px solid #6366f1; /* Indigo accent */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Unauthorized Message */
+.unauthorized {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+    color: #ef4444;
+    background: white;
+    border-radius: 10px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================== */
+/* 2. Form Styling (Create/Edit)        */
+/* ==================================== */
+
+.timetable-form-container {
+    max-width: 550px;
+    margin: 3rem auto;
+}
+
+.timetable-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timetable-form label {
+    font-weight: 600;
+    color: #4b5563;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.timetable-form input,
+.timetable-form select {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.timetable-form input:focus,
+.timetable-form select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    outline: none;
+}
+
+.submit-btn,
+.timetable-form button[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 14px 20px;
+    background-color: #10b981; /* Green for Save */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.submit-btn:hover,
+.timetable-form button[type="submit"]:hover {
+    background-color: #059669;
+}
+
+/* ==================================== */
+/* 3. List View (Table)                 */
+/* ==================================== */
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #6366f1; /* Indigo */
+    color: white;
+    margin-bottom: 2rem;
+    transition: background-color 0.2s;
+}
+.add-btn:hover {
+    background-color: #4f46e5;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.timetable-table th, .timetable-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.timetable-table th {
+  background-color: #374151; /* Dark header */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.timetable-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.timetable-table td:last-child {
+    white-space: nowrap;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.edit-btn {
+    background-color: #fcd34d; /* Amber for Edit */
+    color: #1f2937;
+}
+.edit-btn:hover {
+    background-color: #fbbf24;
+}
+
+.delete-btn {
+    background-color: #ef4444; /* Red for Delete */
+    color: white;
+}
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ==================================== */
+/* 4. View Component Styling            */
+/* ==================================== */
+
+.timetable-view-container {
+    max-width: 500px;
+    margin: 3rem auto;
+}
+
+.timetable-card.detailed {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.timetable-card.detailed strong {
+    color: #6366f1;
+    font-weight: 600;
+    display: inline-block;
+    width: 120px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.back-btn:hover {
+    background-color: #4b5563;
+}
+
+/* ==================================== */
+/* 5. Responsiveness                    */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .timetable-container,
+    .timetable-form-container,
+    .timetable-view-container {
+        padding: 1rem;
+    }
+    .timetable-form {
+        padding: 1.5rem;
+    }
+    .timetable-container h1 {
+        font-size: 1.8rem;
+    }
+    .timetable-table th, .timetable-table td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    .timetable-table td:last-child {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.weekly-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e1f29, #2c2d3a);
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.weekly-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a9d6ff;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.day-column {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-header {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px 0;
+  color: #ffd166;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.day-schedule {
+  flex-grow: 1;
+}
+
+.class-card {
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.class-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.03);
+}
+
+.subject-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #aee6ff;
+}
+
+.time-range {
+  color: #ffd166;
+  margin-top: 5px;
+}
+
+.faculty-info {
+  font-size: 0.8rem;
+  color: #c9c9c9;
+  margin-top: 3px;
+}
+
+.no-class {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
+  }
+}

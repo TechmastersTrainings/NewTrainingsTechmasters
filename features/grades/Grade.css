@@ -1,0 +1,218 @@
+/* ==================================== */
+/* 1. Global Containers & Headers       */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.grade-form-container,
+.grade-list-container,
+.grade-view-container {
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1f2937;
+  border-bottom: 4px solid #4f46e5; /* Primary accent line */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ==================================== */
+/* 2. Grade Form (Create/Edit)          */
+/* ==================================== */
+
+.grade-form-container {
+    max-width: 500px;
+    margin: 3rem auto;
+}
+
+.grade-form {
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid #fcd34d; /* Amber accent */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grade-form input,
+.grade-form select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grade-form input:focus,
+.grade-form select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+.grade-form button[type="submit"] {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+.grade-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #3b82f6, #4f46e5);
+    transform: translateY(-2px);
+}
+
+
+/* ==================================== */
+/* 3. Grade List                        */
+/* ==================================== */
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.add-btn {
+    background-color: #10b981; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+.add-btn:hover {
+    background-color: #059669;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.grade-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.grade-table th, .grade-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.grade-table th {
+  background-color: #1f2937;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.grade-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+/* Action Buttons */
+.edit-btn, .delete-btn {
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    font-size: 0.85rem;
+}
+
+.edit-btn { background-color: #fcd34d; color: #1f2937; }
+.edit-btn:hover { opacity: 0.8; }
+
+.delete-btn { background-color: #ef4444; color: white; }
+.delete-btn:hover { opacity: 0.8; }
+
+
+/* ==================================== */
+/* 4. Grade View                        */
+/* ==================================== */
+
+.grade-view-container {
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+.grade-card.detailed {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #06b6d4; /* Cyan accent */
+}
+
+.grade-card.detailed p {
+    margin: 0.8rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #e5e7eb;
+}
+
+.grade-card.detailed p:last-child {
+    border-bottom: none;
+}
+
+.grade-card.detailed strong {
+    color: #4f46e5;
+    display: inline-block;
+    width: 150px;
+}
+
+.back-btn {
+    margin-top: 2rem;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.back-btn:hover {
+    background-color: #4b5563;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grade-form-container,
+    .grade-list-container,
+    .grade-view-container {
+        padding: 1rem;
+    }
+    .grade-table th, .grade-table td {
+        padding: 0.75rem;
+    }
+}

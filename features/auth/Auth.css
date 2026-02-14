@@ -1,0 +1,264 @@
+/* Auth.css - FINAL DESKTOP SPLIT-SCREEN DESIGN (Cleaned and Corrected) */
+
+/* --- Color Palette --- */
+/*
+  - Gradient Primary (Purple): #6A5ACD
+  - Gradient Secondary (Pink/Violet): #C961E6
+  - Gradient Accent (Orange/Yellow): #FF9800
+  - Text Color (Dark): #333333
+  - Input Background: #f0f0f0
+*/
+
+/* --- Global Auth Layout --- */
+.auth-container,
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6A5ACD 0%, #C961E6 100%); 
+  padding: 0;
+}
+
+/* --- Main Card/Wrapper for the Split Layout --- */
+.split-card-wrapper {
+  display: flex;
+  width: 95%; 
+  max-width: 1400px; 
+  height: 90vh; 
+  min-height: 700px; 
+  border-radius: 20px;
+  overflow: hidden; 
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Left Panel (Gradient / Marketing Content) --- */
+.left-panel {
+  flex: 1.5; 
+  background: linear-gradient(45deg, #6A5ACD 0%, #C961E6 100%);
+  color: white;
+  padding: 80px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-panel h2 {
+  font-size: 3rem; 
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.left-panel p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* --- Abstract Shapes (Mimicking the visual assets) --- */
+.abstract-shape {
+  position: absolute;
+  background: linear-gradient(90deg, #FF9800 0%, #FFCC80 100%);
+  opacity: 0.8;
+  border-radius: 10px;
+  transform: rotate(45deg);
+}
+.shape-1 { top: 70%; left: 5%; width: 100px; height: 10px; }
+.shape-2 { top: 75%; left: 10%; width: 150px; height: 15px; }
+.shape-3 { top: 85%; left: 2%; width: 80px; height: 10px; }
+.shape-4 { top: 90%; left: 15%; width: 200px; height: 18px; }
+
+
+/* --- Right Panel (Form / Login / Register) --- */
+.right-panel {
+  flex: 1; 
+  background-color: #ffffff; 
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* CRITICAL FIX: Content starts from the top */
+  align-items: center;
+  overflow-y: auto; 
+}
+
+/* --- Form Specifics --- */
+.form-content-wrapper {
+    width: 100%;
+    max-width: 380px;
+    padding-bottom: 20px; 
+}
+
+.auth-form-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* === INPUT FIELD STYLING (The final corrected block) === */
+.input-icon-group {
+    position : relative;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    height: 50px; /* Fixed height for visual uniformity */
+    padding: 10px 10px;
+
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6A5ACD;
+    z-index: 2; /* Ensure icon is above input field */
+    padding: 10px 10px;
+}
+
+.auth-input-split {
+  width: 100%;
+  padding: 0 15px 0 50px; /* Base padding: 50px left for icon, 15px right */
+  border: none;
+  border-radius: 30px; 
+  font-size: 1rem;
+  background-color: #f0f0f0; 
+  transition: all 0.3s;
+  height: 100%; /* Takes up the full 50px height */
+  line-height: 50px; /* Centers text vertically */
+  padding: 10px 10px;
+}
+
+.auth-input-split:focus {
+    background-color: #e8e8e8;
+    box-shadow: 0 0 0 2px #C961E6;
+    outline: none;
+    padding: 10px 10px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6A5ACD;
+  display: block; 
+  padding: 10px 10px;
+  z-index: 2; /* Ensure toggle icon is clickable */
+}
+
+/* Special padding adjustment for password inputs (or any input with a right-side element) */
+.input-icon-group input[type="password"] {
+    padding-right: 50px !important; /* Increase right padding for the eye icon */
+}
+
+/* Ensure non-password inputs maintain original padding (15px) */
+.input-icon-group input:not([type="password"]) {
+     padding-right: 15px !important; 
+}
+/* Keep right padding for inputs that have an external toggle/icon even when the input type
+   switches to text (e.g., when revealing the password). Adds a small utility class
+   to apply the same padding independent of input[type]. */
+.input-icon-group .has-toggle {
+  padding-right: 50px !important;
+}
+/* === END INPUT FIELD STYLING === */
+
+
+.form-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+    color: #6A5ACD;
+}
+
+.form-meta a {
+    color: #6A5ACD;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Register Specific Grids */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* --- Gradient Button --- */
+.btn-gradient-primary {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, #C961E6 0%, #AA44EE 100%); 
+  box-shadow: 0 10px 20px rgba(201, 97, 230, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-primary:hover {
+  background: linear-gradient(90deg, #AA44EE 0%, #C961E6 100%);
+  box-shadow: 0 10px 25px rgba(201, 97, 230, 0.6);
+  transform: translateY(-2px);
+}
+
+.auth-links-split {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.auth-links-split a {
+    color: #6A5ACD;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* --- Mobile Fallback --- */
+@media (max-width: 992px) {
+  .left-panel {
+    display: none; 
+  }
+  .split-card-wrapper {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    min-height: 500px;
+  }
+  .right-panel {
+    width: 100%;
+    border-radius: 15px;
+    padding: 40px;
+    overflow-y: visible; 
+  }
+  .form-grid {
+      grid-template-columns: 1fr;
+  }
+  .auth-input-split {
+      padding: 12px 15px;
+      padding-left: 15px !important;
+  }
+  .input-icon {
+      display: none; 
+  }
+}

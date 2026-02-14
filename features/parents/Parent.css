@@ -1,0 +1,257 @@
+/* ==================================== */
+/* 1. Global Containers & Typography    */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.component-container {
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-bottom: 4px solid #f97316; /* Orange accent */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Common button styles */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-primary {
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #6b7280; /* Gray */
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.btn-danger {
+  background-color: #ef4444; /* Red */
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* State Messages */
+.form-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+.form-message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+.form-message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.loading-state, .error-state, .no-data {
+    text-align: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================================== */
+/* 2. Parent Form (Create/Edit)         */
+/* ==================================== */
+
+.parent-form-container {
+    max-width: 700px;
+    margin: 3rem auto;
+}
+
+.parent-form {
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid #f97316; /* Orange accent */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 10px); /* Two columns layout */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+.parent-form label {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.parent-form input:not([type="checkbox"]),
+.parent-form select,
+.parent-form textarea {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.parent-form input:focus,
+.parent-form select:focus,
+.parent-form textarea:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  outline: none;
+}
+
+/* Checkbox group for Active status */
+.checkbox-group {
+    flex: 1 1 100%; /* Take full width */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.checkbox-group label {
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: #4f46e5;
+    font-size: 1rem;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #f97316;
+}
+
+.form-actions {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+/* ==================================== */
+/* 3. Parent List (Table)               */
+/* ==================================== */
+
+.parent-list-container {
+    padding-top: 2rem;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.parent-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.parent-table th, .parent-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.parent-table th {
+  background-color: #1f2937;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.parent-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .parent-form {
+        padding: 1.5rem;
+        gap: 15px;
+    }
+    .form-group {
+        flex: 1 1 100%; /* Stack columns on small screens */
+    }
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .list-header h2 {
+        margin-bottom: 1rem;
+    }
+    .parent-table th, .parent-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,198 @@
+/* ==================================== */
+/* 1. Dashboard Container & Header      */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.grading-container {
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grading-container h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1f2937;
+  border-bottom: 4px solid #4f46e5; /* Primary accent line */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ==================================== */
+/* 2. Controls & Filtering              */
+/* ==================================== */
+
+.grading-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.grading-controls input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.grading-controls input[type="text"]:focus {
+    border-color: #4f46e5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.grading-controls button {
+    background: linear-gradient(135deg, #10b981, #06b6d4); /* Green/Cyan */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.grading-controls button:hover {
+    background: linear-gradient(135deg, #06b6d4, #10b981);
+    transform: translateY(-1px);
+}
+
+/* ==================================== */
+/* 3. Grading Table                     */
+/* ==================================== */
+
+.grading-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.grading-table th, .grading-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.grading-table th {
+  background-color: #4f46e5; /* Primary blue header */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.grading-table tbody tr:hover {
+  background-color: #eef2ff; /* Light blue wash on hover */
+  transition: background-color 0.2s;
+}
+
+/* Specific column highlighting */
+.grading-table td:nth-child(2) { color: #06b6d4; font-weight: 600; } /* AI Score (Cyan) */
+.grading-table td:nth-child(3) { color: #10b981; font-weight: 700; } /* Final Score (Green) */
+.grading-table td:nth-child(5) { text-align: center; } /* Reviewed status */
+
+.grading-table button {
+    background-color: #fcd34d; /* Amber/Yellow for Edit */
+    color: #1f2937;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.grading-table button:hover {
+    background-color: #fbbf24;
+}
+
+/* ==================================== */
+/* 4. Grade Edit Modal/Interface        */
+/* ==================================== */
+
+.grade-edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 450px;
+    border-top: 5px solid #ef4444; /* Red accent for review */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grade-edit-modal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ef4444;
+}
+
+.grade-edit-modal input[type="number"],
+.grade-edit-modal textarea {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grade-edit-modal textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.grade-edit-modal button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.grade-edit-modal button:first-of-type { /* Save */
+    background-color: #4f46e5;
+    color: white;
+}
+.grade-edit-modal button:first-of-type:hover {
+    background-color: #3b82f6;
+}
+
+.grade-edit-modal button:last-of-type { /* Close */
+    background-color: #e5e7eb;
+    color: #4b5563;
+}
+.grade-edit-modal button:last-of-type:hover {
+    background-color: #d1d5db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grading-controls {
+        flex-direction: column;
+    }
+    .grading-table th, .grading-table td {
+        padding: 0.75rem;
+    }
+}

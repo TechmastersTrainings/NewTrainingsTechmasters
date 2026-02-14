@@ -1,0 +1,88 @@
+.submission-container {
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto; /* allows horizontal scroll within container */
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background-color: #530202;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* ✅ Keep table responsive */
+.submission-table {
+  width: 100%;
+  min-width: 700px; /* ensures columns don't collapse too much */
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* ✅ Table borders and layout */
+.submission-table th,
+.submission-table td {
+  border: 1px solid #eae7e7;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap; /* prevent text wrapping */
+}
+
+.submission-table th {
+  background-color: #320101;
+  font-weight: 600;
+}
+
+/* ✅ Buttons */
+.view-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #45a049;
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+  padding: 20px;
+}
+
+/* ✅ Small screens */
+@media (max-width: 768px) {
+  .submission-container {
+    overflow-x: auto;
+  }
+
+  .submission-table {
+    font-size: 0.9rem;
+    min-width: 600px; /* keep table readable */
+  }
+
+  .submission-table th,
+  .submission-table td {
+    padding: 8px;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+}

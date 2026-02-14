@@ -1,0 +1,235 @@
+/* --- Base Containers and Layout --- */
+.class-container, .class-form-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e0f2f1; /* Light Teal border */
+  padding-bottom: 10px;
+}
+
+h1 {
+  color: #004d40; /* Dark Teal */
+  font-size: 2rem;
+}
+
+.add-btn {
+  background-color: #00796b; /* Medium Teal */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #004d40; /* Darker Teal */
+}
+
+/* --- Class List Grid --- */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.class-card {
+  background: #f7fcfc; /* Very Light Teal */
+  border: 1px solid #b2dfdb; /* Light Teal border */
+  border-left: 5px solid #009688; /* Main Teal accent */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.class-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.class-card h3 {
+  color: #3e2723; /* Dark Brown */
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.class-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+/* Faculty Badge/Box */
+.class-card p:last-of-type {
+  background-color: #fff8e1; /* Light Yellow/Orange */
+  border: 1px solid #ffe0b2;
+  color: #6d4c41 !important; /* Brown text */
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+.view-btn {
+  background-color: #009688; /* Teal */
+  color: white;
+  flex-grow: 1;
+}
+
+.view-btn:hover {
+  background-color: #00796b;
+}
+
+.edit-btn {
+  background-color: #ffb300; /* Amber/Orange */
+  color: #3e2723; /* Dark Brown */
+}
+
+.edit-btn:hover {
+  background-color: #ffa000;
+}
+
+.delete-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.no-posts {
+    text-align: center;
+    color: #9e9e9e;
+    padding: 20px;
+    border: 1px dashed #e0e0e0;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* --- Class Create/Edit Form Styles --- */
+.form-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-header h2 {
+  color: #004d40;
+}
+
+.class-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #3e2723; /* Dark Brown */
+}
+
+.class-form-grid input[type="text"],
+.class-form-grid input[type="number"],
+.class-form-grid textarea,
+.class-form-grid select {
+  padding: 10px;
+  border: 1px solid #b2dfdb;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.class-form-grid input:focus,
+.class-form-grid select:focus,
+.class-form-grid textarea:focus {
+  border-color: #009688; /* Teal focus */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 150, 136, 0.2);
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-primary {
+  flex-grow: 1;
+  background-color: #009688;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #00796b;
+}
+
+.btn-secondary {
+  background-color: #e0f2f1; /* Light Teal background */
+  color: #004d40; /* Dark Teal text */
+  padding: 12px 20px;
+  border: 1px solid #b2dfdb;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #b2dfdb;
+}
+
+/* Checkbox/Toggle styling */
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}

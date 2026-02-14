@@ -1,0 +1,233 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+  --primary-color: #0a66c2; /* LinkedIn Blue */
+  --primary-hover: #004182;
+  --bg-body: #f3f2ef;       /* Light gray background */
+  --bg-card: #ffffff;
+  --input-bg: #f8f9fa;      /* Slight gray for inputs so they pop */
+  --input-border: #cfcfcf;  /* Visible border */
+  --text-main: #191919;
+  --text-sub: #666666;
+  --radius-card: 10px;
+  --radius-input: 6px;
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.profile-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* =========================================
+   2. CARDS
+   ========================================= */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.card-padding {
+  padding: 1.5rem;
+}
+
+h2, h3 {
+  margin-top: 0;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* =========================================
+   3. FORMS & INPUTS (The Fix)
+   ========================================= */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444; /* Darker label for readability */
+}
+
+/* Make inputs distinct and visible */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  background-color: var(--input-bg); 
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-input);
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: #333;
+  width: 100%;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03); /* Inner shadow for depth */
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15); /* Blue focus ring */
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* =========================================
+   4. COMPACT INPUT GROUPS (Add Button)
+   ========================================= */
+.input-group {
+  display: flex;
+  gap: 8px;
+  align-items: stretch; /* Ensures button is same height as input */
+}
+
+.input-group input {
+  flex: 1; /* Takes up remaining space */
+}
+
+/* =========================================
+   5. BUTTONS (Fixed Sizing)
+   ========================================= */
+.btn {
+  padding: 8px 18px; /* Moderate padding */
+  border-radius: 20px; /* Pill shape */
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto; /* Prevents button from stretching full width */
+  min-width: 80px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-sub);
+  border: 1px solid #666;
+}
+.btn-secondary:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: #333;
+  border-color: #333;
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: #d11124;
+  border: 1px solid #d11124;
+}
+.btn-danger:hover {
+  background-color: #fff0f0;
+}
+
+/* The 'Add' button next to inputs - Smaller & Square-ish */
+.btn-add {
+  padding: 0 16px;
+  border-radius: var(--radius-input); /* Matches input corners */
+  font-size: 0.9rem;
+  height: 40px; /* Force height to match standard input height */
+  margin-top: 1px; /* Micro-adjustment for alignment */
+}
+
+/* =========================================
+   6. TAGS & HEADER
+   ========================================= */
+.tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #eef3f8;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d0d7de;
+}
+
+.remove-icon {
+  color: #666;
+  cursor: pointer;
+  font-weight: bold;
+}
+.remove-icon:hover { color: #d11124; }
+
+.profile-header-card {
+  position: relative;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.banner {
+  height: 120px;
+  background: #a0b4b7;
+  width: 100%;
+}
+.avatar-container {
+  margin-top: -60px;
+  margin-bottom: 1rem;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end; /* Aligns Save/Cancel to right */
+  gap: 15px;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}

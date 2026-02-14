@@ -1,0 +1,300 @@
+/* ==================================== */
+/* 1. Global & Utility Styles           */
+/* ==================================== */
+
+
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+/* Generic container for all main content views */
+.app-view-container {
+  padding: 3rem 2rem;
+  background-color: #f9fafb; /* Light background */
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.view-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  border-bottom: 4px solid #4f46e5; /* Primary accent line */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.unauthorized {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: #dc2626; /* Red for access denied */
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  margin-top: 5rem;
+}
+
+/* ==================================== */
+/* 2. Primary Button & Table Styling    */
+/* ==================================== */
+
+.add-btn {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(6, 182, 212, 0.3);
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(6, 182, 212, 0.5);
+}
+
+/* 🟢 UNIVERSAL TABLE STYLE: .app-table */
+.app-table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.app-table th, .app-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Header colors */
+.app-table th {
+  background-color: #1f2937; /* Dark header background */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.app-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+/* Action Buttons (Used universally) */
+.edit-btn, .delete-btn {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.edit-btn {
+  background-color: #fcd34d; /* Amber for edit */
+  color: #1f2937;
+}
+.edit-btn:hover {
+  background-color: #fbbf24;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: #ef4444; /* Red for delete */
+  color: white;
+}
+.delete-btn:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+
+/* Table cell specific styles (e.g., download link) */
+.app-table td a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.app-table td a:hover {
+    color: #4f46e5;
+}
+
+
+/* ==================================== */
+/* 3. Assignment Form (Create/Edit)     */
+/* ==================================== */
+
+.assignment-form-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid #4f46e5; /* Indigo accent border */
+}
+
+.assignment-form-container h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.assignment-form select,
+.assignment-form input[type="text"],
+.assignment-form input[type="date"],
+.assignment-form input[type="file"],
+.assignment-form textarea {
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.assignment-form select:focus,
+.assignment-form input:focus,
+.assignment-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+.assignment-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.assignment-form label {
+    font-weight: 600;
+    color: #4f46e5;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.assignment-form button[type="submit"] {
+  /* Strong button style for primary action */
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.assignment-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #06b6d4, #4f46e5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(60, 130, 246, 0.6);
+}
+
+
+/* ==================================== */
+/* 4. Submission & List Specific Styles */
+/* ==================================== */
+
+.submission-view-title {
+    font-size: 2rem;
+    color: #1f2937;
+    border-bottom: 3px solid #06b6d4;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.pending {
+    color: #f59e0b; /* Amber/Orange for pending status */
+    font-weight: 600;
+}
+
+/* Wrapper for horizontal scrolling */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Submission input and button within a table cell */
+/* These styles must target elements *inside* a table cell (td) */
+.app-table td.submission-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-table input[type="file"] {
+    max-width: 150px;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    /* Reset default input styles to fit table cell better */
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+.app-table input[type="file"]:focus {
+    box-shadow: none;
+}
+
+.view-btn {
+    background-color: #10b981; /* Green submit color */
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+
+/* ==================================== */
+/* 5. Responsiveness */
+/* ==================================== */
+@media (max-width: 768px) {
+    .app-view-container,
+    .assignment-form-container {
+        padding: 2rem 1rem;
+    }
+
+    /* Apply scrollable behavior to the table wrapper */
+    .table-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .app-table {
+        display: block; 
+    }
+
+    .app-table th, .app-table td {
+        min-width: 100px;
+    }
+}

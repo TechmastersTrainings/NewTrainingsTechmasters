@@ -1,0 +1,193 @@
+/* ==================================== */
+/* 1. Global Page Structure & Layout    */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.page-container {
+  padding: 3rem 2rem;
+  background-color: #f5f7fa; /* Light, clean background */
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-bottom: 3px solid #6366f1; /* Indigo accent */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h2 {
+    margin-bottom: 0; /* Remove extra margin when in header */
+    border-bottom: none;
+}
+
+/* ==================================== */
+/* 2. Button Styling (Reusable)         */
+/* ==================================== */
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 1rem;
+  margin-left: 10px; /* For actions within the table */
+}
+
+.btn-primary {
+  background-color: #6366f1; /* Indigo primary color */
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.btn-info {
+    background-color: #3b82f6; /* Blue for Edit */
+    color: white;
+}
+.btn-info:hover {
+    background-color: #2563eb;
+}
+
+.btn-danger {
+  background-color: #ef4444; /* Red for Delete */
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  margin-left: 5px;
+}
+
+/* ==================================== */
+/* 3. Form Styling (Create/Edit)        */
+/* ==================================== */
+
+.form {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    outline: none;
+}
+
+.form .btn-primary {
+    margin-top: 10px;
+    padding: 14px 20px;
+}
+
+/* ==================================== */
+/* 4. Subject List (Table)              */
+/* ==================================== */
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead th {
+  padding: 1rem;
+  text-align: left;
+  background-color: #374151; /* Darker header background */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.table td:last-child {
+    white-space: nowrap;
+}
+
+/* ==================================== */
+/* 5. Responsiveness                    */
+/* ==================================== */
+
+@media (max-width: 600px) {
+    .page-container {
+        padding: 1rem;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .page-header .btn-primary {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .form {
+        padding: 1.5rem;
+    }
+    .table {
+        /* Makes table scrollable on small screens */
+        display: block;
+        overflow-x: auto;
+    }
+    .table thead, .table tbody, .table tr, .table th, .table td {
+        display: block; /* Stack items for better visibility, though complex for tables */
+    }
+}

@@ -1,0 +1,98 @@
+.pending-approvals-page {
+    padding: 3rem 2rem;
+    background-color: #f9fafb; /* Light background */
+    min-height: 80vh;
+    font-family: 'Inter', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pending-approvals-page h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    border-bottom: 3px solid #4f46e5; /* Primary accent line */
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.loading, .no-pending, .error {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.loading {
+    color: #4f46e5;
+    background-color: #eef2ff;
+}
+
+.no-pending {
+    color: #10b981; /* Green success color */
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.error {
+    color: #ef4444;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+}
+
+/* --- Table Styling --- */
+.pending-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures table corners are rounded */
+}
+
+.pending-table th, .pending-table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pending-table th {
+    background-color: #3b82f6; /* Bright Blue header background */
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Style for the rows */
+.pending-table tbody tr:hover {
+    background-color: #f3f4f6;
+    transition: background-color 0.2s;
+}
+
+/* Style for the button column */
+.pending-table td:last-child {
+    text-align: center;
+}
+
+/* --- Approve Button --- */
+.approve-btn {
+    background-color: #10b981; /* Green primary action color */
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.approve-btn:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.6);
+}

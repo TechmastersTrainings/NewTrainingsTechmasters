@@ -1,0 +1,417 @@
+/* --- Dashboard Layout --- */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.class-header-banner {
+  background-color: #3e2723; /* Dark Brown/Coffee */
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.class-header-banner h1 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.room-badge {
+  background-color: #009688; /* Teal Accent */
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.class-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.class-stats span {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  background-color: #ffb300; /* Amber/Orange */
+  color: #3e2723;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #ffa000;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+}
+
+/* --- Left Sidebar/Info --- */
+.info-card {
+  background: #fff8e1; /* Lightest Orange/Yellow */
+  border: 1px solid #ffe0b2;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  color: #3e2723; /* Dark Brown */
+  margin-top: 0;
+  border-bottom: 1px solid #ffe0b2;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.status-active {
+  color: #009688; /* Teal */
+  font-weight: 600;
+}
+.status-inactive {
+    color: #f44336; /* Red */
+    font-weight: 600;
+}
+
+.empty-state {
+  color: #9e9e9e;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+/* --- Feed Area --- */
+.feed-area {
+  min-height: 500px;
+}
+
+/* Post Creator */
+.post-creator-card {
+  background: white;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.post-tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.post-tabs button {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  background: #f7fcfc;
+  color: #3e2723;
+  cursor: pointer;
+  font-weight: 500;
+  border-right: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.post-tabs button.active {
+  background: #009688; /* Active Teal */
+  color: white;
+  font-weight: 700;
+}
+
+.post-creator-card textarea {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  min-height: 100px;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.post-btn {
+  background-color: #ffb300; /* Amber/Orange */
+  color: #3e2723;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.post-btn:hover {
+  background-color: #ffa000;
+}
+
+/* Stream Feed Posts */
+.stream-feed {
+  display: flex;
+  flex-direction: column-reverse; /* Show newest post at the top */
+}
+
+.post-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffb300; /* Orange */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 700;
+  color: #004d40;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #9e9e9e;
+}
+
+.badge-teacher {
+  background-color: #009688;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.post-body {
+  margin-bottom: 15px;
+  color: #3e2723; /* Dark Brown for content */
+  line-height: 1.6;
+}
+
+.post-footer {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+}
+
+.action-link {
+  background: none;
+  border: none;
+  color: #ffb300;
+  cursor: pointer;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.action-link:hover {
+  color: #e65100; /* Darker Orange */
+}
+
+/* Post Type Specific Styling */
+.post-card.type-announcement {
+  background: #e0f2f1; /* Light Teal for announcements */
+  border-left: 5px solid #004d40;
+}
+
+.post-card.type-qna {
+  background: #fcf4e3; /* Lightest Orange for QnA */
+  border-left: 5px solid #ffb300;
+}
+
+/* --- STUDENT MANAGEMENT SECTION STYLES --- */
+.student-management-container {
+    background-color: #f7fcfc; /* Very Light Teal background */
+    border: 1px solid #b2dfdb;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.student-management-container h3 {
+    color: #004d40; /* Dark Teal */
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.management-flex-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.add-student-card {
+    flex-basis: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ffe0b2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.add-student-card h4 {
+    color: #ffb300;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.add-student-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-student-form input {
+    padding: 10px;
+    border: 1px solid #b2dfdb;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.add-student-btn {
+    background-color: #009688; /* Teal */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 5px;
+}
+
+.add-student-btn:hover {
+    background-color: #00796b;
+}
+
+.btn-attendance {
+    background-color: #ffb300; /* Orange */
+    color: #3e2723;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-attendance:hover {
+    background-color: #ffa000;
+}
+
+/* Student Table Styles */
+.students-table-wrapper {
+    flex-grow: 1;
+    overflow-x: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.data-table th {
+    background-color: #e0f2f1; /* Light Teal header */
+    color: #004d40;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f7fcfc;
+}
+
+.delete-student-btn {
+    background: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.delete-student-btn:hover {
+    background: #d32f2f;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .management-flex-container {
+        flex-direction: column;
+    }
+    .add-student-card {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .class-header-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .class-stats {
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+}

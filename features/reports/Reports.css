@@ -1,0 +1,141 @@
+/* ==================================== */
+/* 1. Global Structure & Loading State  */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.reports-dashboard {
+  padding: 3rem 2rem;
+  background-color: #f0f2f5; /* Light, neutral background */
+  min-height: 85vh;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reports-loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+    color: #4f46e5;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.reports-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  border-bottom: 4px solid #4f46e5; /* Primary accent line */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ==================================== */
+/* 2. Reports Grid & Card Styling       */
+/* ==================================== */
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 3rem;
+}
+
+.report-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 15px;
+    color: white; /* Text color is white on gradients */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.report-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.report-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.report-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+
+/* --- Gradient Themes --- */
+
+.report-card.blue-gradient {
+    background: linear-gradient(135deg, #3b82f6, #4f46e5); /* Indigo to Blue */
+}
+
+.report-card.purple-gradient {
+    background: linear-gradient(135deg, #a855f7, #ec4899); /* Violet to Pink */
+}
+
+.report-card.green-gradient {
+    background: linear-gradient(135deg, #10b981, #34d399); /* Green to Mint */
+}
+
+.report-card.orange-gradient {
+    background: linear-gradient(135deg, #f97316, #facc15); /* Orange to Amber */
+}
+
+
+/* ==================================== */
+/* 3. Footer & Responsiveness           */
+/* ==================================== */
+
+.reports-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reports-footer p {
+    margin: 0;
+    color: #6b7280;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .reports-dashboard {
+        padding: 1rem;
+    }
+    .reports-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .reports-title {
+        font-size: 2rem;
+    }
+    .report-card {
+        padding: 1.5rem;
+    }
+    .report-value {
+        font-size: 3rem;
+    }
+}

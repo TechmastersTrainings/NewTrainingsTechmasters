@@ -1,0 +1,241 @@
+/* ==================================== */
+/* 1. Base Container & Header Styling   */
+/* ==================================== */
+body {
+    background-color: #53809d; /* Light, subtle background color */
+}
+
+.notes-container {
+  padding: 3rem 2rem;
+  /* Matching the vibrant theme with a light background gradient */
+  background: linear-gradient(180deg, #f9fafb 0%, #e0f2fe 100%); 
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.notes-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.notes-header h1 {
+  /* Using the signature gradient for the title */
+  background: linear-gradient(90deg, #4f46e5, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 3rem; /* Slightly larger */
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.notes-header p {
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* ==================================== */
+/* 2. Note List & Card Styling          */
+/* ==================================== */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.note-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #e5e7eb; /* Subtle border */
+}
+
+.note-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(79, 70, 229, 0.3); /* Stronger, colored shadow on hover */
+}
+
+.note-card h3 {
+  color: #1f2937;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.note-desc {
+  color: #4b5563;
+  margin-bottom: 1.25rem;
+  min-height: 40px;
+  font-size: 0.95rem;
+}
+
+.note-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.note-meta strong {
+  color: #374151; /* Darker key names */
+}
+
+.download-btn {
+  /* Using a powerful gradient for the button */
+  background: linear-gradient(90deg, #3b82f6, #4f46e5); 
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(60, 130, 246, 0.5);
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  color: #6b7280;
+  font-size: 1.2rem;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  margin: 0 15%;
+}
+
+.loading-screen {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: #4f46e5;
+}
+
+/* ======================================= */
+/* 3. Upload Link Styling (in NoteList header)*/
+/* ======================================= */
+
+.upload-note-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 25px;
+  background-color: #fcd34d; /* Amber Primary */
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 700;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(252, 211, 77, 0.5);
+}
+
+.upload-note-link:hover {
+  background-color: #fbbf24;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(252, 211, 77, 0.7);
+}
+
+
+/* ==================================== */
+/* 4. Notes Upload Form Styling         */
+/* ==================================== */
+
+.note-upload-container {
+  max-width: 650px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid #06b6d4; /* Cyan accent border */
+}
+
+.note-upload-container h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.note-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.note-upload-form input[type="text"],
+.note-upload-form textarea,
+.note-upload-form select {
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.note-upload-form input[type="text"]:focus,
+.note-upload-form textarea:focus,
+.note-upload-form select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+.note-upload-form textarea {
+  resize: vertical;
+}
+
+.upload-btn {
+  /* Using the strong gradient for the upload button */
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.upload-btn:hover {
+  background: linear-gradient(135deg, #06b6d4, #4f46e5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(60, 130, 246, 0.6);
+}
+
+/* ==================================== */
+/* 5. ACCESS DENIED STYLES */
+/* ==================================== */
+.unauthorized-access-container {
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fef2f2; 
+    border: 1px solid #fca5a5; 
+    border-radius: 10px;
+    color: #b91c1c; 
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+}
+
+.unauthorized-access-container h2 {
+    font-size: 1.8rem;
+    color: #ef4444; 
+}
+
+.unauthorized-access-container p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
